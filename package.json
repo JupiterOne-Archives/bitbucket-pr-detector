@@ -1,8 +1,8 @@
 {
   "name": "@jupiterone/bitbucket-pr-detector",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Perform configurable actions when new pull requests of interest are opened",
-  "main": "dist/index.js",
+  "main": "dist/src/index.js",
   "license": "SEE LICENSE IN LICENSE",
   "files": [
     "LICENSE",
