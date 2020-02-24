@@ -1,6 +1,6 @@
 {
   "name": "@jupiterone/bitbucket-pr-detector",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Perform configurable actions when new pull requests of interest are opened",
   "main": "dist/src/index.js",
   "license": "SEE LICENSE IN LICENSE",
@@ -22,14 +22,11 @@
     "slack-webhook": "^1.0.0"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.18",
     "@types/node": "^12.0.8",
     "fs-extra": "^8.1.0",
     "husky": "^3.0.5",
-    "jest": "^24.9.0",
     "lint-staged": "^9.2.5",
     "prettier": "^1.18.2",
-    "ts-jest": "^24.0.2",
     "ts-node": "^8.3.0",
     "tslint": "^5.20.0",
     "tslint-config-prettier": "^1.18.0",
