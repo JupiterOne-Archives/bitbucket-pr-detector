@@ -32,6 +32,7 @@ export interface PRDetectorConfig {
     bitbucketRepo: string      // required, repository name
     bitbucketUsername: string  // required, bitbucket user name
     bitbucketPassword: string  // required, bitbucket password
+    bitbucketPRQuery?: string  // if given, will override bitbucket API filter
     slackWebhookUrl?: string   // if given, will alert to Slack
     slackAuthor?: string       // alert author
     slackAlertTitle?: string   // alert title

@@ -7,6 +7,7 @@ export interface PRDetectorConfig {
   bitbucketRepo: string;
   bitbucketUsername: string;
   bitbucketPassword: string;
+  bitbucketPRQuery?: string;
   slackWebhookUrl?: string;
   slackAuthor?: string;
   slackAlertTitle?: string;
@@ -46,16 +47,17 @@ export async function processPullRequestsAsync(
     slack.init(config.slackWebhookUrl);
   }
 
-  const prs = await gatherAPIValues(config, 'pullrequests?state=OPEN');
-
-  debugLog(config, `found ${prs.length} open pull requests`);
-
   const {
     checkPRSeenAsync = defaultCheckPRSeenAsync,
     savePRSeenAsync = defaultSavePRSeenAsync,
     detectionFilter = defaultDetectionFilter,
     processPRAsync = defaultProcessPRAsync,
+    bitbucketPRQuery = 'pullrequests?state=OPEN'
   } = config;
+
+  const prs = await gatherAPIValues(config, config.bitbucketPRQuery);
+
+  debugLog(config, `found ${prs.length} open pull requests`);
 
   // filter for previously unseen PRs that satisfy detection criteria
   const newRFCs: any = [];
