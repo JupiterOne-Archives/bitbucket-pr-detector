@@ -55,7 +55,7 @@ export async function processPullRequestsAsync(
     bitbucketPRQuery = 'pullrequests?state=OPEN'
   } = config;
 
-  const prs = await gatherAPIValues(config, config.bitbucketPRQuery);
+  const prs = await gatherAPIValues(config, bitbucketPRQuery);
 
   debugLog(config, `found ${prs.length} open pull requests`);
 
